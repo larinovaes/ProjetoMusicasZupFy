@@ -27,7 +27,6 @@ public class MusicaServiceTest {
     public void setup(){
         musica = new Musica();
         musica.setNome("Samba de um Janota Só");
-        musica.setDataDeCadastro(LocalDate.now());
 
     }
 

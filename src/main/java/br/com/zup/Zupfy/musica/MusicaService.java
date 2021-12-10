@@ -13,6 +13,7 @@ public class MusicaService {
     private MusicaRepository musicaRepository;
 
     public Musica cadastrarMusica(Musica musica) {
+        musica.setDataDeCadastro(LocalDate.now());
         return musicaRepository.save(musica);
     }
 
@@ -29,6 +30,6 @@ public class MusicaService {
     }
 
     public List<Musica> retornarTodasAsMusicas() {
-        return null;
+      return null;
     }
 }
