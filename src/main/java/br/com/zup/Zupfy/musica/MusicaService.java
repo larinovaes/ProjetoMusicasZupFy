@@ -30,6 +30,7 @@ public class MusicaService {
     }
 
     public List<Musica> retornarTodasAsMusicas() {
-      return null;
+      List<Musica> musicas = (List<Musica>) musicaRepository.findAll();
+      return musicas;
     }
 }
