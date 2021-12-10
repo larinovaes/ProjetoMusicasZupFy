@@ -20,9 +20,8 @@ public class MusicaService {
     public void deletarMusica(int id) {
         if (!musicaRepository.existsById(id)) {
             throw new MusicaNaoEcontradaExeception("Musica não encontrada");
-        } else {
-            musicaRepository.deleteById(id);
         }
+        musicaRepository.deleteById(id);
     }
 
     public Musica atualizarMusica(Musica musica) {
@@ -30,7 +29,7 @@ public class MusicaService {
     }
 
     public List<Musica> retornarTodasAsMusicas() {
-      List<Musica> musicas = (List<Musica>) musicaRepository.findAll();
-      return musicas;
+        List<Musica> musicas = (List<Musica>) musicaRepository.findAll();
+        return musicas;
     }
 }
