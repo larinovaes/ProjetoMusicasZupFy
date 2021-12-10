@@ -4,10 +4,9 @@ import br.com.zup.Zupfy.musica.dtos.MusicaDetalhesDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/musicas")
@@ -19,7 +18,7 @@ public class MusicaController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    private MusicaDetalhesDTO cadastrarMusica(MusicaDetalhesDTO musicaDetalhesDTO) {
+    private MusicaDetalhesDTO cadastrarMusica(@RequestBody @Valid MusicaDetalhesDTO musicaDetalhesDTO) {
      Musica musica = modelMapper.map(musicaDetalhesDTO, Musica.class);
      musicaService.cadastrarMusica(musica);
      musicaDetalhesDTO = modelMapper.map(musica, MusicaDetalhesDTO.class);
