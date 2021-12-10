@@ -13,7 +13,7 @@ public class MusicaService {
     private MusicaRepository musicaRepository;
 
     public Musica cadastrarMusica(Musica musica) {
-        return null;
+        return musicaRepository.save(musica);
     }
 
     public void deletarMusica(int id) {
