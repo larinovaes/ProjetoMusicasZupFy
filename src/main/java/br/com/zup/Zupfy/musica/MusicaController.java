@@ -1,6 +1,5 @@
 package br.com.zup.Zupfy.musica;
 
-import br.com.zup.Zupfy.musica.dtos.MusicaCadastroDTO;
 import br.com.zup.Zupfy.musica.dtos.MusicaDetalhesDTO;
 import br.com.zup.Zupfy.musica.dtos.MusicaResumoDTO;
 import org.modelmapper.ModelMapper;
