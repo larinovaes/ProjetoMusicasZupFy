@@ -20,7 +20,7 @@ public class MusicaController {
     private ModelMapper modelMapper;
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     private MusicaDetalhesDTO cadastrarMusica(@RequestBody @Valid MusicaDetalhesDTO musicaDetalhesDTO) {
      Musica musica = modelMapper.map(musicaDetalhesDTO, Musica.class);
      musicaService.cadastrarMusica(musica);
@@ -38,7 +38,7 @@ public class MusicaController {
         return resumoDTO;
     }
 
-    @DeleteMapping("/musicas/{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     private void deletarMusica(@PathVariable int id) {
         musicaService.deletarMusica(id);
